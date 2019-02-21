@@ -8,4 +8,8 @@ package com.joyxj.leetcode.difficulty.easy;
  * @date 2019-02-20
  */
 public class EasyDemo {
+
+    public static void main(String[] args) {
+        
+    }
 }
