@@ -1,5 +1,9 @@
 package com.joyxj.leetcode.difficulty.easy;
 
+import java.util.*;
+
+
+
 /*
  * @lc app=leetcode.cn id=13 lang=java
  *
@@ -68,18 +72,59 @@ package com.joyxj.leetcode.difficulty.easy;
  * 
  */
 
+
 public class E013_RomanToInteger {
     public static void main(String[] args) {
 
 
-        System.out.println(new E013_RomanToInteger.Solution().romanToInt("aaa"));
+        System.out.println(new E013_RomanToInteger.Solution().romanToInt("III"));
     }
 
 
     static class Solution {
         public int romanToInt(String s) {
-            System.out.println(s.length());
-            return 0;
+            //定义一个map存储所有的映射关系
+            // I:1,V:5,X:10,L:50,C:100,D:500,M:1000
+            Map<String,Integer> map = new HashMap<>();
+            map.put("I", 1);
+            map.put("V", 5);
+            map.put("IV", 4);
+            map.put("X", 10);
+            map.put("IX", 9);
+            map.put("L", 50);
+            map.put("XL", 40);
+            map.put("XC", 90);
+            map.put("C", 100);
+            map.put("D", 500);
+            map.put("CD", 400);
+            map.put("M", 1000);
+            map.put("CM", 900);
+            //获得字符串的长度
+            int len = s.length();
+            int count =0;
+            int sum = 0;
+            //遍历每一个字符
+            while (count < len) {
+                char c = s.charAt(count);
+                if (count != len-1) {
+                    //表示还没有遍历到最后一位字符
+                    char next = s.charAt(count+1);
+                    String temp = String.valueOf(c) + String.valueOf(next);
+                    if (map.get(temp)!=null) {
+                        //连续二位的字符在map中存在，说明其是特殊情况
+                        sum = sum + map.get(temp);
+                        count = count +2;
+                    } else {
+                        sum = sum + map.get(String.valueOf(c));
+                        count = count + 1;
+                    }
+                } else {
+                    //是最后一位
+                    sum = sum + map.get(String.valueOf(c));
+                        count = count + 1;
+                }
+            }
+            return sum;
         }
     }
 }
