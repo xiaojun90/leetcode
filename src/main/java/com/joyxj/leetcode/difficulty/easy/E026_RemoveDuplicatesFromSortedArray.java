@@ -71,7 +71,7 @@ package com.joyxj.leetcode.difficulty.easy;
  * 
  */
 
-public class E26_RemoveDuplicatesFromSortedArray {
+public class E026_RemoveDuplicatesFromSortedArray {
 
     public static void main(String[] args) {
         new Solution().removeDuplicates(null);
