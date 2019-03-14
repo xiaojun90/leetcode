@@ -42,10 +42,11 @@ public class E069_Sqrtx {
             if (x == 1) {
                 return 1;
             }
+            // 转成long类型是为了防止溢出
             long left = 0;
             long right = x;
             long mid = (left + right)/2;
-    
+            // 采用二分法实现
             while (true) {
                 if (mid * mid == x) {
                     return (int)mid;
