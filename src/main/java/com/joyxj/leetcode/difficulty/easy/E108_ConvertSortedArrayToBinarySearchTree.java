@@ -57,7 +57,6 @@ public class E108_ConvertSortedArrayToBinarySearchTree {
                 return null;
             }
             int center = (l + r) /2;
-            System.out.println(l + ":" + r + ":" + center);
             TreeNode node = new TreeNode(nums[center]);
             node.left = buildTree(nums, l, center-1);
             node.right = buildTree(nums, center+1, r);
