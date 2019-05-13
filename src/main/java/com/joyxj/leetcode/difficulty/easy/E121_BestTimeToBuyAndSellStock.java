@@ -23,25 +23,25 @@ public class E121_BestTimeToBuyAndSellStock {
             }
             return max;
         }
-    }
 
-    /**
-     * 动态规划思想解法
-     * 
-     * 1、今天卖出的最大利润是在今天前最小值买入。
-     * 2、比较每天卖出的最大利润的最大值即可。
-     * @param prices
-     * @return
-     */
-    public int maxProfit_1(int[] prices) {
-        if (prices.length == 0 ) {
-            return 0;
+        /**
+         * 动态规划思想解法
+         * 
+         * 1、今天卖出的最大利润是在今天前最小值买入。
+         * 2、比较每天卖出的最大利润的最大值即可。
+         * @param prices
+         * @return
+         */
+        public int maxProfit_1(int[] prices) {
+            if (prices.length == 0 ) {
+                return 0;
+            }
+            int min = prices[0],max = 0;
+            for (int i=0,len=prices.length; i<len ; i ++) {
+                max = Math.max(prices[i] - min, max);
+                min = Math.min(prices[i], min);
+            }
+            return max;
         }
-        int min = prices[0],max = 0;
-        for (int i=0,len=prices.length; i<len ; i ++) {
-            max = Math.max(prices[i] - min, max);
-            min = Math.min(prices[i], min);
-        }
-        return max;
     }
 }
