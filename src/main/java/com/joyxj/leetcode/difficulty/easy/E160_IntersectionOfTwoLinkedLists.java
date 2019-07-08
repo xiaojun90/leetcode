@@ -17,7 +17,7 @@ package com.joyxj.leetcode.difficulty.easy;
  * 1. 初始时，pA 指向 headA 的头结点 0 ,pB 指向 headB 的头结点 3.
  * 2. pB 到达 headB 尾结点时，pA 指向 headA 的 值为 1 的节点。此时 pB 开始指向 headA 的头节点。
  * 3. pA 到达 headA 尾结点时，pB 指向 headA 的 值为 9 的节点。此时 pA 开始指向 headB 的头节点。
- * 4. 此时，pA 指向了 headB 的值为 3 的头结点，pB 指向了 headA 的值为 1 的结点。
+ * 4. 此时，pA 指向了 headB 的值为 3 的头结点，pB 指向了 headA 的值为 1 的结点。此时已经消除了长度差。
  * 
  */
 public class E160_IntersectionOfTwoLinkedLists {
