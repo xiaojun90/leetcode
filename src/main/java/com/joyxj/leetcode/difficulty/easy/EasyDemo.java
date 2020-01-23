@@ -10,6 +10,6 @@ package com.joyxj.leetcode.difficulty.easy;
 public class EasyDemo {
 
     public static void main(String[] args) {
-        
+        System.out.println("hello world");
     }
 }
