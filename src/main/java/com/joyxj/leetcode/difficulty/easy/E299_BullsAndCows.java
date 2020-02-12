@@ -1,7 +1,5 @@
 package com.joyxj.leetcode.difficulty.easy;
 
-import java.util.ArrayList;
-import java.util.List;
 
 /*
  * @lc app=leetcode.cn id=299 lang=java
@@ -68,8 +66,8 @@ public class E299_BullsAndCows {
                 if (s == g) {
                     bulls ++;
                 } else {
-                    secArrays[Integer.parseInt(String.valueOf(s))]++;
-                    gueArrays[Integer.parseInt(String.valueOf(g))]++;
+                    secArrays[s-'0']++;
+                    gueArrays[g-'0']++;
                 }
             }
             // 再猜奶牛
