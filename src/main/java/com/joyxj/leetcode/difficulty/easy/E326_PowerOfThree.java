@@ -47,7 +47,13 @@ public class E326_PowerOfThree {
 
     public static void main(String[] args) {
         
-
+        int max = Integer.MAX_VALUE;
+        int num =1;
+        while(num < max && num >0) {
+            System.out.println(num);
+            num = num * 4;
+        }
+        System.out.println(Math.log(8)/Math.log(2));
     }
 
     class Solution {
